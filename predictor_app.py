@@ -6,6 +6,15 @@ import pandas as pd
 #model = xgb.XGBClassifier()
 #model.load_model('ph_model.json')
 
+from keras.initializers import glorot_uniform
+#Reading the model from JSON file
+with open('ph_model.json', 'r') as json_file:
+    json_savedModel= json_file.read()
+    
+#load the model architecture 
+model_j = tf.keras.models.model_from_json(json_savedModel)
+model_j.summary()
+
 #Caching the model for faster loading
 @st.cache
 
