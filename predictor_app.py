@@ -23,6 +23,8 @@ from  PIL import Image, ImageEnhance
 #Caching the model for faster loading
 @st.cache
 
+image = Image.open(r'...\'ph_kit.jpg') #Brand logo image (optional)
+
 st.title('pH Level Predictor')
 st.image('ph_kit.jpg')
 st.header('Enter the Color Image:')
