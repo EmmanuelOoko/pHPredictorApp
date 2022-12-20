@@ -9,10 +9,6 @@ model.load_model('ph_model.json')
 #Caching the model for faster loading
 @st.cache
 
-st.title('pH Level Predictor')
-st.image('ph_kit.jpg')
-st.header('Enter the Color Image:')
-
 def predict(carat, cut, color, clarity, depth, table, x, y, z):
     #Predicting the price of the carat
     if cut == 'Fair':
@@ -61,6 +57,10 @@ def predict(carat, cut, color, clarity, depth, table, x, y, z):
 
     prediction = model.predict(pd.DataFrame([[carat, cut, color, clarity, depth, table, x, y, z]], columns=['carat', 'cut', 'color', 'clarity', 'depth', 'table', 'x', 'y', 'z']))
     return prediction
+
+st.title('pH Level Predictor')
+st.image('ph_kit.jpg')
+st.header('Enter the Color Image:')
 
 carat = st.number_input('Carat Weight:', min_value=0.1, max_value=10.0, value=1.0)
 
