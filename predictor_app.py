@@ -6,16 +6,16 @@ import pandas as pd
 #model = xgb.XGBClassifier()
 #model.load_model('ph_model.json')
 
-"""from keras.initializers import glorot_uniform
+#from keras.initializers import glorot_uniform
 #Reading the model from JSON file
-with open('ph_model.json', 'r') as json_file:
-    json_savedModel= json_file.read()
+#with open('ph_model.json', 'r') as json_file:
+ #   json_savedModel= json_file.read()
     
 #load the model architecture 
-model_j = tf.keras.models.model_from_json(json_savedModel)
-model_j.summary()
+#model_j = tf.keras.models.model_from_json(json_savedModel)
+#model_j.summary()
 
-model_j.load_weights('model_weights.h5')"""
+#model_j.load_weights('model_weights.h5')"""
 
 #Caching the model for faster loading
 @st.cache
@@ -80,16 +80,16 @@ if uploaded_file is not None:
     st.write(bytes_data)
 
     # To convert to a string based IO:
-    stringio = StringIO(uploaded_file.getvalue().decode("utf-8"))
-    st.write(stringio)
+    #stringio = StringIO(uploaded_file.getvalue().decode("utf-8"))
+    #st.write(stringio)
 
     # To read file as string:
-    string_data = stringio.read()
-    st.write(string_data)
+   # string_data = stringio.read()
+    #st.write(string_data)
 
     # Can be used wherever a "file-like" object is accepted:
-    dataframe = pd.read_csv(uploaded_file)
-    st.write(dataframe)
+    #dataframe = pd.read_csv(uploaded_file)
+    #st.write(dataframe)
 
 carat = st.number_input('Carat Weight:', min_value=0.1, max_value=10.0, value=1.0)
 
