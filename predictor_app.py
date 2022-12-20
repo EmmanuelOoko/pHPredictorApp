@@ -15,6 +15,8 @@ with open('ph_model.json', 'r') as json_file:
 model_j = tf.keras.models.model_from_json(json_savedModel)
 model_j.summary()
 
+model_j.load_weights('model_weights.h5')
+
 #Caching the model for faster loading
 @st.cache
 
