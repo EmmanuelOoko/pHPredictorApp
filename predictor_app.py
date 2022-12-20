@@ -73,11 +73,14 @@ st.title('pH Level Predictor')
 st.image('ph_kit.jpg')
 st.header('Enter the Color Image:')
 
-uploaded_file = st.file_uploader("Choose a file")
+uploaded_file = st.file_uploader("Choose a file", type=['jpg','png','jpeg'])
 if uploaded_file is not None:
-    # To read file as bytes:
-    bytes_data = uploaded_file.getvalue()
-    st.write(bytes_data)
+    image = Image.open(uploaded_file)
+    
+    col1, col2 = st.columns( [0.5, 0.5])
+    with col1:
+        st.markdown('<p style="text-align: center;">Before</p>',unsafe_allow_html=True)
+        st.image(image,width=300) 
 
     # To convert to a string based IO:
     #stringio = StringIO(uploaded_file.getvalue().decode("utf-8"))
